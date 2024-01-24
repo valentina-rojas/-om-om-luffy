@@ -1,12 +1,14 @@
 import Phaser from "phaser";
 
-import HelloWorldScene from "./scenes/HelloWorldScene";
+import HelloWorldScene from "./scenes/Juego";
 import UI from "./scenes/UI";
+import Precarga from "./scenes/Precarga";
+import Juego from "./scenes/Juego";
 
 const config = {
   type: Phaser.AUTO,
-  width: 800,
-  height: 600,
+  width: 1920,
+  height: 1080,
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
@@ -26,7 +28,7 @@ const config = {
       debug: false,
     },
   },
-  scene: [HelloWorldScene, UI],
+  scene: [Precarga, Juego , UI, ],
 };
 
 export default new Phaser.Game(config);
