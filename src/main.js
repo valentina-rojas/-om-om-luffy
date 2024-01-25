@@ -6,6 +6,7 @@ import Precarga from "./scenes/Precarga";
 import Juego from "./scenes/Juego";
 import GameOver from "./scenes/GameOver";
 import Menu from "./scenes/Menu";
+import Ganaste from "./scenes/Ganaste";
 
 const config = {
   type: Phaser.AUTO,
@@ -30,7 +31,7 @@ const config = {
       debug: false,
     },
   },
-  scene: [Precarga,Menu, Juego , UI, GameOver ],
+  scene: [Precarga,Menu, Juego , UI, GameOver, Ganaste ],
 };
 
 export default new Phaser.Game(config);

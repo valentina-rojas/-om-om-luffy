@@ -33,7 +33,7 @@ export default class Juego extends Phaser.Scene {
     this.puntaje = 0;
 
 
-   this.shapeDelay = 800; // Restar 100 al valor actual de SHAPE_DELAY
+   this.shapeDelay = 2000; // Restar 100 al valor actual de SHAPE_DELAY
    this.comidaEvent = null;
  
   }
@@ -84,6 +84,10 @@ export default class Juego extends Phaser.Scene {
 
     if (this.puntaje < 0) {
       this.scene.start("GameOver");
+    }
+
+    if (this.puntaje > 1500) {
+      this.scene.start("ganaste");
     }
   }
 
