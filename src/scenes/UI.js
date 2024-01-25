@@ -11,8 +11,9 @@ export default class UI extends Phaser.Scene {
   }
   create() {
     this.text = this.add.text(10, 10, "Puntos: " + this.puntaje, {
-     
-      fontSize: 50,
+      fontFamily: "roboto",
+  fontSize: 50,
+  color: "#000000", // 
     });
 
     events.on("actualizarPuntaje", this.actualizarPuntaje, this);

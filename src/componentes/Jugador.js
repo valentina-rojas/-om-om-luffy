@@ -15,7 +15,7 @@ constructor(scene, x, y, texture) {
     this.setBounce(0.2);
     this.setGravityY(1350);
 
-    this.velocidad = 450;
+    this.velocidad = 800;
 
     this.cursor = scene.input.keyboard.createCursorKeys();
 

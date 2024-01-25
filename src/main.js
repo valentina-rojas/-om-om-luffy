@@ -4,6 +4,8 @@ import HelloWorldScene from "./scenes/Juego";
 import UI from "./scenes/UI";
 import Precarga from "./scenes/Precarga";
 import Juego from "./scenes/Juego";
+import GameOver from "./scenes/GameOver";
+import Menu from "./scenes/Menu";
 
 const config = {
   type: Phaser.AUTO,
@@ -28,7 +30,7 @@ const config = {
       debug: false,
     },
   },
-  scene: [Precarga, Juego , UI, ],
+  scene: [Precarga,Menu, Juego , UI, GameOver ],
 };
 
 export default new Phaser.Game(config);
