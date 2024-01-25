@@ -94,7 +94,8 @@ export default class Juego extends Phaser.Scene {
   agregarComida() {
     const comidaRandom = Phaser.Math.RND.pick(COMIDAS);
 
-    const randomX = Phaser.Math.Between(0, 1080);
+    const randomX = Phaser.Math.Between(0, 1920);
+   
 
     this.comidaGrupo
       .create(randomX, 0, comidaRandom)
@@ -121,8 +122,6 @@ export default class Juego extends Phaser.Scene {
         loop: true,
       });
     }
-
-
   }
 
   
