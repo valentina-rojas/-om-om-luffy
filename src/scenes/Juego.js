@@ -41,6 +41,9 @@ export default class Juego extends Phaser.Scene {
   create() {
     this.add.image(960, 540, "sky");
 
+    this.musica = this.sound.add("musica", { loop: true, volume: 0.2  });
+    this.musica.play();
+
     this.scene.launch("ui");
 
     this.scene.launch("ui", {
@@ -83,10 +86,12 @@ export default class Juego extends Phaser.Scene {
     this.jugador.movimiento();
 
     if (this.puntaje < 0) {
+      this.musica.stop();
       this.scene.start("GameOver");
     }
 
     if (this.puntaje > 1500) {
+      this.musica.stop();
       this.scene.start("ganaste");
     }
   }
@@ -127,6 +132,23 @@ export default class Juego extends Phaser.Scene {
   
 
   recolectarComida(jugador, comida) {
+
+   // this.comer = this.sound.add("comer", { loop: false });
+  //  this.comer.play();
+
+  if (comida.texture.key.startsWith("carne")) {
+    this.comer = this.sound.add("comer", { loop: false, volume: 0.5  });
+    this.comer.play();
+}
+
+
+if (comida.texture.key.startsWith("verdura")) {
+  this.nomegusta = this.sound.add("nomegusta", { loop: false, volume: 0.5 });
+  this.nomegusta.play();
+}
+
+
+
     console.log("figura recolectada");
     comida.disableBody(true, true);
 
